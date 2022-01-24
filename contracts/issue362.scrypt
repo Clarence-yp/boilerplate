@@ -1,0 +1,17 @@
+
+// https://github.com/sCrypt-Inc/ide/issues/362
+// did not stop on breakpoints, when function called twice
+library CLib {
+
+  static function map(int x) : int {
+    return x;
+  }
+}
+
+contract CTC {
+  public function unlock(int x) {
+    require(CLib.map(1) == 1);
+
+    require(CLib.map(2) == 2);
+  }
+}

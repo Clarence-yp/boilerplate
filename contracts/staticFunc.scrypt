@@ -1,0 +1,15 @@
+contract Static {
+  static int N = 3;
+  static function sf(int y) : int {
+    Static s = new Static();
+    return s.f(y);
+  }
+
+  function f(int x) : int {
+    return N + x;
+  }
+
+  public function unlock(int y) {
+    require(sf(y) == 8);
+  }
+}

@@ -1,0 +1,12 @@
+
+contract CtcTest {
+    
+    //static const PrivKey p = PrivKey(0x0101010101);
+    
+    public function unlock(int x) {
+    
+        int xx = x + 3;
+        PrivKey p1 = PrivKey(0x01);
+        require(p1 == PrivKey(0x0101010101));
+    }
+}

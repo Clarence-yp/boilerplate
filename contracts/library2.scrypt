@@ -1,0 +1,24 @@
+struct St {
+  int[2] a;
+  bool b;
+  bytes c;
+}
+
+library L {
+  St st;
+
+  function f() : St {
+    return this.st;
+  }
+}
+
+
+
+contract Test {
+  L l;
+
+  public function unlock(St st) {
+    require(this.l.f() == st);
+    require(true);
+  }
+}

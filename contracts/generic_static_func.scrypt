@@ -1,0 +1,19 @@
+
+library GenericLibray<T> {
+    
+    static function unlock(T x) : T {
+
+        return x;
+    }
+}
+
+
+contract TestGenericLibray {
+    
+    public function unlock(int x) {
+    
+        x = GenericLibray<int>.unlock(1);
+
+        require(x == 1);
+    }
+}

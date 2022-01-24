@@ -1,0 +1,11 @@
+
+contract Issue404 {
+
+    public function unlock(int x) {
+        auto map = new HashedMap<int, int>(b'');
+
+        map.set(1, 11, 0);
+
+        require(true);
+    }
+}

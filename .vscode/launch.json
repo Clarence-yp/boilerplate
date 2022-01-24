@@ -58,6 +58,159 @@
     {
       "type": "scrypt",
       "request": "launch",
+      "name": "Debug Main:second",
+      "program": "${workspaceFolder}/contracts/main.scrypt",
+      "constructorArgs": [
+        10
+      ],
+      "pubFunc": "second",
+      "pubFuncArgs": [
+        3, 7
+      ]
+    },
+    {
+      "type": "scrypt",
+      "request": "launch",
+      "name": "Debug Main:three",
+      "program": "${workspaceFolder}/contracts/main.scrypt",
+      "constructorArgs": [
+        10
+      ],
+      "pubFunc": "three",
+      "pubFuncArgs": [
+        5
+      ]
+    },
+    {
+      "type": "scrypt",
+      "request": "launch",
+      "name": "Debug Generic:unlock",
+      "program": "${workspaceFolder}/contracts/generic_assignment.scrypt",
+      "constructorArgs": [
+      ],
+      "pubFunc": "unlock",
+      "pubFuncArgs": [
+        1
+      ]
+    },
+    {
+      "type": "scrypt",
+      "request": "launch",
+      "name": "Debug Generic:unlock0",
+      "program": "${workspaceFolder}/contracts/generic_assignment.scrypt",
+      "constructorArgs": [
+      ],
+      "pubFunc": "unlock0",
+      "pubFuncArgs": [
+        1
+      ]
+    },
+    {
+      "type": "scrypt",
+      "request": "launch",
+      "name": "Debug Generic Static",
+      "program": "${workspaceFolder}/contracts/generic_static_func.scrypt",
+      "constructorArgs": [
+      ],
+      "pubFunc": "unlock",
+      "pubFuncArgs": [
+        1
+      ]
+    },
+    {
+      "type": "scrypt",
+      "request": "launch",
+      "name": "Debug library1:unlock",
+      "program": "${workspaceFolder}/contracts/library1.scrypt",
+      "constructorArgs": [1,
+				[1, [[1, 2], [1, 2]]]],
+      "pubFunc": "unlock",
+      "pubFuncArgs": [
+        2
+      ]
+    },
+    {
+      "type": "scrypt",
+      "request": "launch",
+      "name": "Debug library2:unlock",
+      "program": "${workspaceFolder}/contracts/library2.scrypt",
+      "constructorArgs": [[{
+        "a": [4, 5],
+        "b": false,
+        "c": "b'01ef02'"
+      }]],
+      "pubFunc": "unlock",
+      "pubFuncArgs": [
+        {
+          "a": [4, 5],
+          "b": false,
+          "c": "b'01ef02'"
+        }
+      ]
+    },{
+      "type": "scrypt",
+      "request": "launch",
+      "name": "Debug issue404:unlock",
+      "program": "${workspaceFolder}/contracts/issue404.scrypt",
+      "constructorArgs": [],
+      "pubFunc": "unlock",
+      "pubFuncArgs": [
+        1
+      ]
+    },{
+      "type": "scrypt",
+      "request": "launch",
+      "name": "Debug generic_nested_property:unlock",
+      "program": "${workspaceFolder}/contracts/generic_nested_property.scrypt",
+      "constructorArgs": [[[{"a": 22, "b": "b'01010f'"}], 11]],
+      "pubFunc": "unlock",
+      "pubFuncArgs": [
+        11
+      ]
+    },
+    {
+      "type": "scrypt",
+      "request": "launch",
+      "name": "Debug staticFunc",
+      "program": "${workspaceFolder}/contracts/staticFunc.scrypt",
+      "constructorArgs": [
+        
+      ],
+      "pubFunc": "unlock",
+      "pubFuncArgs": [
+        5
+      ]
+    },
+    {
+      "type": "scrypt",
+      "request": "launch",
+      "name": "Debug issue362",
+      "program": "${workspaceFolder}/contracts/issue362.scrypt",
+      "constructorArgs": [
+        
+      ],
+      "pubFunc": "unlock",
+      "pubFuncArgs": [
+        5
+      ]
+    },
+    {
+      "type": "scrypt",
+      "request": "launch",
+      "name": "Debug LibAsProperty",
+      "program": "${workspaceFolder}/contracts/LibAsProperty1.scrypt",
+      "constructorArgs": [
+        1,
+        [1, [[1,2],[1,2]]]
+      ],
+      "pubFunc": "unlock",
+      "pubFuncArgs": [
+        2
+      ]
+    },
+    {
+      "type": "scrypt",
+      "request": "launch",
       "name": "Debug Matrix",
       "program": "${workspaceFolder}/contracts/matrix.scrypt",
       "constructorArgs": [],

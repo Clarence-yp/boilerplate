@@ -1,0 +1,63 @@
+import "./lib.scrypt";
+
+contract Main {
+  int x;
+  static int CCC = 3;
+  constructor(int x) {
+    this.x = x;
+  }
+
+  public function first(int y, Sig sig, PubKey pubkey) {
+    require(checkSig(sig, pubkey));
+    require(this.x == Lib.mirror(y-1) + Lib.mirror(1));
+  }
+
+  public function second(int x, int y) {
+    int s = this.sum(x, y);
+    bytes b = this.loopInc();
+    require(len(b) > 0);
+    require(this.x == s);
+  }
+
+  function sum(int x, int y) : int {
+    int z = x + y;
+    return z;
+  }
+
+  function loopInc(): bytes {
+    int z = 0;
+    loop (5) {
+      int x = 1;
+      int y = 2;
+      if (z < 2) {
+        z = z + x;
+      } else {
+        z = z + y;
+      }
+    }
+    bytes ret = num2bin(z, 1);
+    return ret;
+  }
+
+  //test method call
+  public function three(int x) {
+    Lib lib = new Lib(Main.CCC + x);
+    require(lib.mirror2(9) == 71);
+  }
+
+
+  //breakpoints work with nested loops, Fix #212
+  public function four(int x) {
+    loop (3) {
+      x++;
+      loop (3) {
+        x++;
+        loop (3) {
+          x++;
+        }
+      }
+    }
+    require(x == 39);
+  }
+
+}
