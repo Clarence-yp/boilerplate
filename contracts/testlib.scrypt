@@ -1,0 +1,25 @@
+
+import "./fortestlib.scrypt";
+/**
+* contract TestLib
+*/
+contract TestLib {
+
+	public function main(int x1) {
+		Lib lib = new Lib(1, b'0011ef', true, 
+		PrivKey(2988348162058574136915891421498819466320163312926952423791023078876139),
+			PubKey(b'036c8ebf2cb6d5ac229b8be7407895dda05b4509859e6de49a79640cfe979c6831'), 
+			Sha1(b'ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad'),
+			Sha256(b'ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad'),
+			Ripemd160(b'4725a2581b9712495bb378ae8ad0273221f34f4f'), 
+			OpCodeType(b'01'),
+			SigHashType(b'04'),
+			{
+				22, b'1111', false
+			},
+			[123,333,555]
+		 );
+
+		require(lib.run(x1) > 0);
+	}
+}

@@ -1,0 +1,22 @@
+
+struct ST {
+    int x;
+    bool y;
+}
+library GenericLibray<T, K> {
+    T a;
+    K b;
+}
+
+
+contract TestGenericLibray {
+    int x;
+    GenericLibray<int, ST> gl;
+
+    public function unlock(int x) {
+        require(this.gl.a == 101);
+        require(this.gl.b.x == 1011);
+        require(this.gl.b.y == true);
+        require(this.x == x);
+    }
+}

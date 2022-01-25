@@ -1,0 +1,41 @@
+import "demo.scrypt";
+
+/**
+* struct ST
+*/
+struct ST {
+  int x;
+  bool a;
+}
+library L<T,K> {
+  
+  T x;
+  K y;
+}
+contract TestAuto {
+
+  public function unlock(int x) {
+
+    auto demo = new Demo(x,1);
+
+    require(demo.add(x + 1));
+    auto map = new HashedMap<int, int>(b'');
+    require(map.size() == 0);
+    auto set = new HashedSet<int>(b'');
+    auto l = new L<int, bool>(1, true);
+    auto l1 = new L<ST, int[3]>({1, true}, [1, 2, 3]);
+    auto x1 = 1;
+    auto x2 = true;
+    auto x3 = b'01';
+    ST x4 = {12, false};
+    auto x5 = x4;
+    auto x6 = [3, 3,11];
+    auto x7 = [x5, x5,x5];
+    auto arrayL = [l, l, l];
+    auto arrayL1 = [l1, l1, l1];
+    auto key = PrivKey(0x444019ae);
+    auto pub = PubKey(b'0001');
+
+    require(true);
+  }
+}

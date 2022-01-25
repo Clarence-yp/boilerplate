@@ -1,0 +1,35 @@
+
+
+struct St1 {
+	int x;
+	bytes y;
+	bool z;
+}
+
+
+library Lib {
+    int varInt;
+
+	bytes varBytes;
+	bool varbool;
+
+	PrivKey varPrivKey;
+	PubKey varPubkey;
+	Sha1 varSha1;
+	Sha256 varSha256;
+	Ripemd160 varRipemd160;
+	OpCodeType opCode;
+	SigHashType sigHashType;
+
+	St1 st1;
+
+	int[3] vara3;
+
+	static const int N = 232;
+
+
+	function run(int x2): int {
+		return x2 + 1;
+	}
+
+}

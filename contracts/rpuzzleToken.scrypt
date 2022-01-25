@@ -1,0 +1,36 @@
+contract RPuzzleToken {
+    @state
+    Ripemd160 rhash;
+    @state
+    int balance;
+    @state
+    bytes tokenId;
+
+    static const bytes NullTokenId = num2bin(0, Constants.TxIdLen);
+
+    function getSigR(Sig sigr) : bytes {
+        bytes lenBytes = sigr[3 : 4];
+        int len = unpack(lenBytes);
+        bytes r = sigr[4 : 4 + len];
+        return r;
+    }
+
+    public function issue(Sig sig, PubKey p0, Sig sigr, SigHashPreimage txPreimage) {
+        require(Tx.checkPreimage(txPreimage));
+        require(this.tokenId == NullTokenId);
+        require(this.rhash == hash160(this.getSigR(sigr)));
+        require(checkSig(sigr, p0));
+        require(checkSig(sig, p0));
+        bytes outputScript = this.getStateScript();
+        bytes output = Utils.buildOutput(outputScript, SigHash.value(txPreimage));
+        require(hash256(output) == SigHash.hashOutputs(txPreimage));
+    }
+
+    public function unlock(Sig sig, PubKey p0, Sig sigr, PubKey R, Sig sigR, SigHashPreimage txPreimage) {
+        require(Tx.checkPreimage(txPreimage));
+        require(this.rhash == hash160(this.getSigR(sigr)));
+        require(checkSig(sigr, p0));
+        require(checkSig(sig, p0));
+        require(checkSig(sigR, R));
+    }
+}

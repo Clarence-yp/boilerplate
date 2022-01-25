@@ -71,6 +71,30 @@
     {
       "type": "scrypt",
       "request": "launch",
+      "name": "Debug Testlib",
+      "program": "${workspaceFolder}/contracts/testlib.scrypt",
+      "constructorArgs": [
+      ],
+      "pubFunc": "main",
+      "pubFuncArgs": [
+        3
+      ]
+    },
+    {
+      "type": "scrypt",
+      "request": "launch",
+      "name": "Debug Auto",
+      "program": "${workspaceFolder}/contracts/auto.scrypt",
+      "constructorArgs": [
+      ],
+      "pubFunc": "unlock",
+      "pubFuncArgs": [
+        1
+      ]
+    },
+    {
+      "type": "scrypt",
+      "request": "launch",
       "name": "Debug Main:three",
       "program": "${workspaceFolder}/contracts/main.scrypt",
       "constructorArgs": [
@@ -123,7 +147,7 @@
       "name": "Debug library1:unlock",
       "program": "${workspaceFolder}/contracts/library1.scrypt",
       "constructorArgs": [1,
-				[1, [[1, 2], [1, 2]]]],
+				[1, [[1,2], [1,2]]]],
       "pubFunc": "unlock",
       "pubFuncArgs": [
         2
@@ -150,6 +174,42 @@
     },{
       "type": "scrypt",
       "request": "launch",
+      "name": "Debug library2:unlock1",
+      "program": "${workspaceFolder}/contracts/library2.scrypt",
+      "constructorArgs": [[{
+        "a": [4, 5],
+        "b": false,
+        "c": "b'01ef02'"
+      }]],
+      "pubFunc": "unlock1",
+      "pubFuncArgs": [
+        {
+          "a": [4, 5],
+          "b": false,
+          "c": "b'01ef02'"
+        }
+      ]
+    },{
+      "type": "scrypt",
+      "request": "launch",
+      "name": "Debug library2:unlock2",
+      "program": "${workspaceFolder}/contracts/library2.scrypt",
+      "constructorArgs": [[{
+        "a": [4, 5],
+        "b": false,
+        "c": "b'01ef02'"
+      }]],
+      "pubFunc": "unlock2",
+      "pubFuncArgs": [
+        {
+          "a": [4, 5],
+          "b": false,
+          "c": "b'01ef02'"
+        }
+      ]
+    },{
+      "type": "scrypt",
+      "request": "launch",
       "name": "Debug issue404:unlock",
       "program": "${workspaceFolder}/contracts/issue404.scrypt",
       "constructorArgs": [],
@@ -162,7 +222,27 @@
       "request": "launch",
       "name": "Debug generic_nested_property:unlock",
       "program": "${workspaceFolder}/contracts/generic_nested_property.scrypt",
-      "constructorArgs": [[[{"a": 22, "b": "b'01010f'"}], 11]],
+      "constructorArgs": [[[{"a": 101, "b": "b'01010f'"}], 11]],
+      "pubFunc": "unlock",
+      "pubFuncArgs": [
+        11
+      ]
+    },{
+      "type": "scrypt",
+      "request": "launch",
+      "name": "Debug generic_nested_property1:unlock",
+      "program": "${workspaceFolder}/contracts/generic_nested_property1.scrypt",
+      "constructorArgs": [[[111]]],
+      "pubFunc": "unlock",
+      "pubFuncArgs": [
+        111
+      ]
+    },{
+      "type": "scrypt",
+      "request": "launch",
+      "name": "Debug generic_property:unlock",
+      "program": "${workspaceFolder}/contracts/generic_property.scrypt",
+      "constructorArgs": [11, [101, {"x": 1011, "y": true}]],
       "pubFunc": "unlock",
       "pubFuncArgs": [
         11
