@@ -1,0 +1,36 @@
+contract Foo {
+  int x;
+
+  constructor(int _x) {
+  	this.x = _x;
+  }
+
+  public function equal(int y) {
+		require(y == this.x);
+  }
+
+	public function equalAfterInc(int y) {
+		this.x = this.sum(this.x, 1);
+		require(this.x == y);
+	}
+
+	function sum(int x, int y): int {
+		int z = x + y;
+		return z;
+	}
+
+	/* sum(2, 2)  Comments should not appear when Find All References #83 */
+
+	// sum(1, 2) Comments should not appear when Find All References #83 
+
+
+	function asum (int a, int b): int {
+		int z = a + b;
+		return z;
+	}
+
+	public function bb(int y) {
+		int asum = this.asum(2, 1);
+		require(this.x == y);
+	}
+}
