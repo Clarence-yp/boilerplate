@@ -1,17 +1,15 @@
 library GenericLibray<T> {
     T a;
     function get(T x) : T {
-        
+
         return x;
     }
 }
 
-
 contract TestGenericLibray {
-    
-    
+
     public function unlock(int x) {
-    
+
         GenericLibray<int> lib = new GenericLibray(1);
 
         GenericLibray<bool> lib1 = new GenericLibray(true);
@@ -26,10 +24,10 @@ contract TestGenericLibray {
     }
 
     public function unlock0(int x) {
-    
+
         GenericLibray<int> lib = new GenericLibray(1);
 
-        if(x > 0) {
+        if (x > 0) {
             GenericLibray<bool> lib = new GenericLibray(true);
             require(lib.get(false) == false);
         }

@@ -1,5 +1,4 @@
 
-
 library GenericA<T> {
     T c;
     function get() : T {
@@ -15,20 +14,17 @@ library GenericLibray<T> {
     }
 }
 
-
 contract TestGenericLibray {
-    
-    GenericLibray<int> l;
-    
-    public function unlock(int x) {
-    
-        GenericLibray<int> lib = new GenericLibray(new GenericA<int>(8888));
 
+    GenericLibray<int> l;
+
+    public function unlock(int x) {
+
+        GenericLibray<int> lib = new GenericLibray(new GenericA<int>(8888));
         require(lib.getA().get() == 8888);
 
         require(this.l.getA().get() == x);
 
         require(true);
     }
-
 }

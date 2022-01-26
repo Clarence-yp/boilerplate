@@ -1,5 +1,4 @@
 
-
 struct ST {
     int a;
     bytes b;
@@ -14,7 +13,7 @@ library GenericA<T> {
 library GenericLibray<T> {
     GenericA<ST> a;
     T x;
-    function get() : GenericA<bytes>  {
+    function get() : GenericA<bytes> {
         GenericA<bytes> lib = new GenericA(b'');
         bytes r = lib.get();
         return lib;
@@ -29,14 +28,13 @@ library GenericLibray<T> {
     }
 }
 
-
 contract TestGenericLibray {
-    
+
     GenericLibray<int> l;
-    
+
     public function unlock(int x) {
-    
-        GenericLibray<int> lib = new GenericLibray(new GenericA<ST>({1, b'0905'}), 1001);
+
+        GenericLibray<int> lib = new GenericLibray(new GenericA<ST>({ 1, b'0905' }), 1001);
 
         GenericA<bytes> a = this.l.get();
 
@@ -44,19 +42,19 @@ contract TestGenericLibray {
 
         auto aa = this.l.getA();
 
-        require(aaa == aa); 
+        require(aaa == aa);
 
-        require(aa.get() == {101, b'01010f'}); 
+        require(aa.get() == { 101, b'01010f' });
 
-        bytes r  = (new GenericA<bytes>(b'')).get();
+        bytes r = (new GenericA<bytes>(b'')).get();
 
         require(r == b'');
 
-        ST st = (new GenericA<ST>({1, b'0905'})).get();
+        ST st = (new GenericA<ST>({ 1, b'0905' })).get();
 
-        require(st == {1, b'0905'});
+        require(st == { 1, b'0905' });
 
-        int X = (new GenericLibray<int>(new GenericA<ST>({1, b'0905'}), 1001)).getX();
+        int X = (new GenericLibray<int>(new GenericA<ST>({ 1, b'0905' }), 1001)).getX();
 
         require(X == 1001);
 
@@ -64,5 +62,4 @@ contract TestGenericLibray {
 
         require(true);
     }
-
 }

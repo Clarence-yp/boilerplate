@@ -10,21 +10,18 @@ library L {
   }
 }
 
-
 library L1 {
   private int x;
   private L[2] l;
 
   function f() : int {
     L l = this.l[0];
-    return l.f();
+    return l.f() + this.l[0].f();
   }
 }
 
-
-
 contract Test {
-  private int x;
+  public int x;
   L1 l1;
 
   public function unlock(int x) {

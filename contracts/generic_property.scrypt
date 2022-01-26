@@ -3,11 +3,10 @@ struct ST {
     int x;
     bool y;
 }
-library GenericLibray<T, K> {
+library GenericLibray<T,K> {
     T a;
     K b;
 }
-
 
 contract TestGenericLibray {
     int x;

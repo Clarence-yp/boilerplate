@@ -1,0 +1,22 @@
+
+library GenericLibray<TTTT> {
+
+    static function unlock(TTTT x) : TTTT {
+
+        return x;
+    }
+}
+
+contract TestGenericLibray {
+
+    public function unlock(int x) {
+
+        HashedMap<int, int> map = new HashedMap(b'');
+        x = GenericLibray<int>.unlock(1);
+        auto mapa = new HashedMap<int, int>(b'');
+
+        HashedSet<int> set = new HashedSet(b'');
+        auto seta = new HashedSet<int>(b'');
+        require(x == 1);
+    }
+}
