@@ -210,6 +210,24 @@
     },{
       "type": "scrypt",
       "request": "launch",
+      "name": "Debug library3:unlock",
+      "program": "${workspaceFolder}/contracts/library3.scrypt",
+      "constructorArgs": [[{
+        "a": [4, 5],
+        "b": false,
+        "c": "b'01ef02'"
+      }]],
+      "pubFunc": "unlock",
+      "pubFuncArgs": [
+        {
+          "a": [4, 5],
+          "b": false,
+          "c": "b'01ef02'"
+        }
+      ]
+    },{
+      "type": "scrypt",
+      "request": "launch",
       "name": "Debug issue404:unlock",
       "program": "${workspaceFolder}/contracts/issue404.scrypt",
       "constructorArgs": [],
