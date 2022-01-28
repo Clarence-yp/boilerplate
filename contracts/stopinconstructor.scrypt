@@ -1,0 +1,22 @@
+library Lib {
+
+	int x;
+
+
+    constructor(int y) {
+		this.x = y + 1;
+	}
+
+	function getX(): int {
+		return this.x;
+	}
+}
+
+
+contract Test {
+
+	public function main(int x) {
+		Lib lib = new Lib(1);
+		require(lib.getX() == 2);
+	}
+}

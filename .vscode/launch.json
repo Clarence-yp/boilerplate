@@ -238,6 +238,16 @@
     },{
       "type": "scrypt",
       "request": "launch",
+      "name": "Debug stopinconstructor:main",
+      "program": "${workspaceFolder}/contracts/stopinconstructor.scrypt",
+      "constructorArgs": [],
+      "pubFunc": "main",
+      "pubFuncArgs": [
+        1
+      ]
+    },{
+      "type": "scrypt",
+      "request": "launch",
       "name": "Debug generic_nested_property:unlock",
       "program": "${workspaceFolder}/contracts/generic_nested_property.scrypt",
       "constructorArgs": [[[{"a": 101, "b": "b'01010f'"}], 11]],
