@@ -150,7 +150,8 @@
 				[1, [[1,2], [1,2]]]],
       "pubFunc": "unlock",
       "pubFuncArgs": [
-        2
+        2,
+        [1,2]
       ]
     },
     {
@@ -224,6 +225,16 @@
           "b": false,
           "c": "b'01ef02'"
         }
+      ]
+    },{
+      "type": "scrypt",
+      "request": "launch",
+      "name": "Debug library4:unlock",
+      "program": "${workspaceFolder}/contracts/library4.scrypt",
+      "constructorArgs": [1],
+      "pubFunc": "unlock",
+      "pubFuncArgs": [
+        1
       ]
     },{
       "type": "scrypt",
