@@ -1,0 +1,33 @@
+library CLib {
+  static const int DX = 1;
+
+  static function f1(static const int X, static const int Y) : int {
+    int y = 0;
+    loop(X): i {
+      loop(Y) : j {
+        y += i * j;
+      }
+    }
+    return y;
+  }
+
+static function f2(static const int DX) : int {
+    int y = 0;
+    loop(DX): i {
+		y += i;
+    }
+    return y;
+  }
+}
+
+contract CTC_Loop {
+  static const int N1 = 3;
+  static const int N2 = 4;
+  public function unlock(int x) {
+    require(CLib.f1(N1, N2) == x);
+  }
+
+  public function unlock1(int x) {
+    require(CLib.f2(N2) == x);
+  }
+}

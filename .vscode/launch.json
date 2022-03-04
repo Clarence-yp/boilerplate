@@ -58,6 +58,19 @@
     {
       "type": "scrypt",
       "request": "launch",
+      "name": "Debug CTC_Loop",
+      "program": "${workspaceFolder}/contracts/ctc_loop.scrypt",
+      "constructorArgs": [
+
+      ],
+      "pubFunc": "unlock",
+      "pubFuncArgs": [
+        18
+      ]
+    },
+    {
+      "type": "scrypt",
+      "request": "launch",
       "name": "Debug Main:second",
       "program": "${workspaceFolder}/contracts/main.scrypt",
       "constructorArgs": [
