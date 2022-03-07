@@ -121,7 +121,7 @@
     {
       "type": "scrypt",
       "request": "launch",
-      "name": "Debug Generic:unlock",
+      "name": "Debug generic_assignment:unlock",
       "program": "${workspaceFolder}/contracts/generic_assignment.scrypt",
       "constructorArgs": [
       ],
