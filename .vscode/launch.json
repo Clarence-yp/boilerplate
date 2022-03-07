@@ -71,6 +71,19 @@
     {
       "type": "scrypt",
       "request": "launch",
+      "name": "Debug helloword:unlock1",
+      "program": "${workspaceFolder}/contracts/helloworld.scrypt",
+      "constructorArgs": [
+
+      ],
+      "pubFunc": "unlock1",
+      "pubFuncArgs": [
+        "\"\r\n\"😊\"b'0d0a' /\\$()*.?+^[](){}|<>&\""
+      ]
+    },
+    {
+      "type": "scrypt",
+      "request": "launch",
       "name": "Debug Main:second",
       "program": "${workspaceFolder}/contracts/main.scrypt",
       "constructorArgs": [
